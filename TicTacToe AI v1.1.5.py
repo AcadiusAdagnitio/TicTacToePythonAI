@@ -196,6 +196,38 @@ class tensorflow22:
             tensorflow40 += tensorflow3[i] * (3**i)
         return tensorflow40
 
+    # no one i think is in my tree, i mean it must be high or low
+    @staticmethod
+    def tensorflow46():
+        tensorflow22.tensorflow23 = []
+        tensorflow47 = [tensorflow22([0, 0, 0, 0, 0, 0, 0, 0, 0])]
+        tensorflow48 = []
+        tensorflow18 = 1
+        while len(tensorflow47) > 0:
+            for i in range(0, len(tensorflow47)):
+                tensorflow49 = tensorflow47[i]
+                for j in range(0, 9):
+                    tensorflow50 = copy.deepcopy(tensorflow49.tensorflow3)
+                    if tensorflow50[j] == 0:
+                        tensorflow50[j] = tensorflow18
+                        tensorflow51 = tensorflow22.tensorflow36(tensorflow50)
+                        tensorflow52 = False
+                        tensorflow39 = 0
+                        for k in range(0, i - 1):
+                            tensorflow38 = tensorflow47[k].tensorflow38(tensorflow51)
+                            if tensorflow38 >= 0:
+                                tensorflow39 = tensorflow47[k].tensorflow33[tensorflow38]
+                                tensorflow52 = True
+                                break
+                        if not (tensorflow52):
+                            tensorflow39 = tensorflow22(tensorflow50)
+                            tensorflow48.append(tensorflow39)
+                        tensorflow49.tensorflow53(tensorflow39)
+            tensorflow18 = 2 if tensorflow18 == 1 else 1
+            tensorflow22.tensorflow23.append(tensorflow47)
+            tensorflow47 = tensorflow48
+            tensorflow48 = []
+
 
 # pending update...
 def tensorflow32(tensorflow42, tensorflow45):
@@ -213,39 +245,6 @@ def tensorflow32(tensorflow42, tensorflow45):
         tensorflow42[i].tensorflow35 = min(5, max(-5, tensorflow42[i].tensorflow35))
 
 
-# no one i think is in my tree, i mean it must be high or low
-def tensorflow46():
-    print("Initialising AI.")
-    tensorflow22.tensorflow23 = []
-    tensorflow47 = [tensorflow22([0, 0, 0, 0, 0, 0, 0, 0, 0])]
-    tensorflow48 = []
-    tensorflow18 = 1
-    while len(tensorflow47) > 0:
-        for i in range(0, len(tensorflow47)):
-            tensorflow49 = tensorflow47[i]
-            for j in range(0, 9):
-                tensorflow50 = copy.deepcopy(tensorflow49.tensorflow3)
-                if tensorflow50[j] == 0:
-                    tensorflow50[j] = tensorflow18
-                    tensorflow51 = tensorflow22.tensorflow36(tensorflow50)
-                    tensorflow52 = False
-                    tensorflow39 = 0
-                    for k in range(0, i - 1):
-                        tensorflow38 = tensorflow47[k].tensorflow38(tensorflow51)
-                        if tensorflow38 >= 0:
-                            tensorflow39 = tensorflow47[k].tensorflow33[tensorflow38]
-                            tensorflow52 = True
-                            break
-                    if not (tensorflow52):
-                        tensorflow39 = tensorflow22(tensorflow50)
-                        tensorflow48.append(tensorflow39)
-                    tensorflow49.tensorflow53(tensorflow39)
-        tensorflow18 = 2 if tensorflow18 == 1 else 1
-        tensorflow22.tensorflow23.append(tensorflow47)
-        tensorflow47 = tensorflow48
-        tensorflow48 = []
-        print(len(tensorflow22.tensorflow23), "out of 10 completed.")
-    print("AI initialised.")
 def tensorflow81():    
     print("Loading AI.")
     try:
@@ -432,9 +431,9 @@ def tensorflow78():
         if tensorflow79 == 0:
             break
         elif tensorflow79 == 1:
-            tensorflow46()
+            tensorflow22.tensorflow46()
         elif tensorflow79 == 2:
-            tensorflow46()
+            tensorflow22.tensorflow46()
             tensorflow81()
         elif tensorflow79 == 3:
             tensorflow75(tensorflow59, tensorflow59, tensorflow10, True)
@@ -468,6 +467,6 @@ def tensorflow78():
 
 
 # i'm just a poor boy, nobody loves me
-tensorflow46()
+tensorflow22.tensorflow46()
 tensorflow81()
 tensorflow78()
