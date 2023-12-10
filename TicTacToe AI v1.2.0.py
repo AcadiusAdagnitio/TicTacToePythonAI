@@ -4,7 +4,7 @@ import random
 import copy
 import math
 
-tensorflow0 = [" ", "X", "O"]
+tensorflow0 = ["X", "O"]
 tensorflow26 = ["heads", "tails"]
 
 
@@ -24,7 +24,7 @@ def tensorflow4(tensorflow2):
             print(
                 (tensorflow5 + 1)
                 if tensorflow2[tensorflow5] == 0
-                else tensorflow0[tensorflow2[tensorflow5]],
+                else tensorflow0[tensorflow2[tensorflow5]-1],
                 end="",
             )
             print("", end="|" if i < 2 else "\n")
@@ -132,7 +132,7 @@ def tensorflow75(
                 "\nIt's",
                 tensorflow17[tensorflow18 - 1]
                 + "'s turn! ("
-                + tensorflow0[((tensorflow19 + 1) % 2) + 1]
+                + tensorflow0[(tensorflow19 + 1) % 2]
                 + ")",
             )
             tensorflow4(tensorflow21.tensorflow3)
@@ -245,8 +245,8 @@ def tensorflow32(tensorflow42, tensorflow45):
 
 
 def tensorflow81():
-    print("Loading AI.")
     try:
+        print("Loading AI.")
         tensorflow55 = open("AIDATA.txt", "r")
         tensorflow56 = tensorflow55.read().split("\n")
         for i in range(0, len(tensorflow56)):
@@ -259,17 +259,17 @@ def tensorflow81():
                 tensorflow57 = tensorflow42[j].split(":")
                 tensorflow58 = int(tensorflow57[0])
                 tensorflow35 = float(tensorflow57[1])
-                for k in range(len(tensorflow22.tensorflow23[i])):
+                for k in range(0,len(tensorflow22.tensorflow23[i])):
                     if tensorflow22.tensorflow23[i][k].tensorflow34 == tensorflow58:
                         tensorflow22.tensorflow23[i][k].tensorflow35 = tensorflow35
                         break
             print((i + 1), "out of 10 completed.")
         tensorflow55.close()
+        print("AI loaded.")
     except FileNotFoundError:
         print("No prior memory found.")
     except:
         print("Error found in memory.")
-    print("AI loaded.")
 
 
 # i like to move it move it
@@ -324,23 +324,23 @@ def tensorflow67(tensorflow21, tensorflow29):
 
 # trade?
 def tensorflow68():
-    tensorflow69 = tensorflow0[1]
+    tensorflow69 = tensorflow0[0]
     while True:
         tensorflow69 = input("Please input the new symbol for move 1: ")
         if len(tensorflow69) == 1:
             break
         print("It must be a single character.")
-    tensorflow70 = tensorflow0[1]
-    tensorflow0[1] = tensorflow69
-    if tensorflow0[2] == tensorflow69:
-        tensorflow0[2] = tensorflow70
-    tensorflow69 = tensorflow0[2]
+    tensorflow70 = tensorflow0[0]
+    tensorflow0[0] = tensorflow69
+    if tensorflow0[1] == tensorflow69:
+        tensorflow0[1] = tensorflow70
+    tensorflow69 = tensorflow0[1]
     while True:
         tensorflow69 = input("Please input the new symbol for move 2: ")
         if len(tensorflow69) == 1:
             break
         print("It must be a single character.")
-    tensorflow0[2] = tensorflow69
+    tensorflow0[1] = tensorflow69
 
 
 # rising up, back on the street, took my time, took my chances.
@@ -399,7 +399,7 @@ def tensorflow76():
 
 # all i have to say is that they don't really care about us
 def tensorflow80():
-    print("Tic Tac Toe AI V1.1.0")
+    print("Tic Tac Toe AI V1.2.0")
     print("This project was created as a hobby project.")
     print("2023 (C) Acadius")
     print("All rights reserved.")
@@ -417,9 +417,9 @@ def tensorflow78():
         print("5. Play against the AI.")
         print(
             "6. Change symbols (current symbols:",
-            tensorflow0[1],
+            tensorflow0[0],
             "for move 1;",
-            tensorflow0[2],
+            tensorflow0[1],
             "for move 2)",
         )
         print("7. Train the AI.")
