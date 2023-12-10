@@ -259,10 +259,13 @@ def tensorflow81():
                 tensorflow57 = tensorflow42[j].split(":")
                 tensorflow58 = int(tensorflow57[0])
                 tensorflow35 = float(tensorflow57[1])
-                for k in range(0,len(tensorflow22.tensorflow23[i])):
-                    if tensorflow22.tensorflow23[i][k].tensorflow34 == tensorflow58:
-                        tensorflow22.tensorflow23[i][k].tensorflow35 = tensorflow35
-                        break
+                if tensorflow22.tensorflow23[i][j].tensorflow34 == tensorflow58:
+                    tensorflow22.tensorflow23[i][j].tensorflow35 = tensorflow35
+                else:
+                    for k in range(0,len(tensorflow22.tensorflow23[i])):
+                        if tensorflow22.tensorflow23[i][k].tensorflow34 == tensorflow58:
+                            tensorflow22.tensorflow23[i][k].tensorflow35 = tensorflow35
+                            break
             print((i + 1), "out of 10 completed.")
         tensorflow55.close()
         print("AI loaded.")
